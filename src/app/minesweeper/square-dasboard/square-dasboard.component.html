@@ -1,0 +1,12 @@
+<div class="grid gap-0 w-80 h-80" [style.gridTemplateColumns]="'repeat(' + dim + ', minmax(0, 1fr))'">
+    <ng-container *ngFor="let row of matrix; let rowIndex = index">
+      <ng-container *ngFor="let square of row; let colIndex = index">
+        <app-square
+          [squareData]="square"
+          (gameOver)="handleGameOver()"
+          class="aspect-square"
+        ></app-square>
+      </ng-container>
+    </ng-container>
+  </div>
+  
